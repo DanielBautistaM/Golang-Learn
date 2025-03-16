@@ -14,10 +14,14 @@ import (
 
 func main() {
 	mux := mux.NewRouter()
-	mux.HandleFunc("/", rutas.Home)
-	mux.HandleFunc("/home", rutas.Nosotros)
-	mux.HandleFunc("/parametros", rutas.Parametros)
-	mux.HandleFunc("/query", rutas.Query)
+	mux.HandleFunc("/home", rutas.Home)
+	mux.HandleFunc("/notosotros", rutas.Nosotros)
+	mux.HandleFunc("/parametros/{id}/{slug}", rutas.Parametros)
+	mux.HandleFunc("/query/{id}/{slug}/{texto}", rutas.Query)
+	mux.HandleFunc("/estructura", rutas.Estructuras)
+
+	s := http.StripPrefix("/public", http.FileServer(http.Dir("./public/")))
+	mux.PathPrefix("/public").Handler(s)
 
 	errorVariables := godotenv.Load()
 	if errorVariables != nil {
