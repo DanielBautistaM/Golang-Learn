@@ -1,0 +1,18 @@
+/* Estilos para elementos con la clase 'clase_rojo' */
+.clase_rojo {
+    color: red;                /* Color del texto */
+    font-size: 24px;          /* Tamaño de la fuente */
+    font-weight: bold;        /* Texto en negrita */
+}
+
+/* Estilos base para todas las imágenes */
+img {
+    cursor: pointer;          /* Cambia el cursor a una mano al pasar por encima */
+    max-width: 200px;        /* Limita el ancho máximo */
+    transition: transform 0.3s ease;  /* Animación suave para la transformación */
+}
+
+/* Efecto hover (cuando el mouse pasa por encima) para imágenes */
+img:hover {
+    transform: scale(1.1);    /* Aumenta el tamaño un 10% */
+}
